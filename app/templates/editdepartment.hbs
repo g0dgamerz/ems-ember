@@ -1,0 +1,10 @@
+{{page-title "Editdepartment"}}
+<form onsubmit={{action "editDepartment"}}>
+  <div>
+    <label for="departmentName">Department Name</label>
+    <Input id="departmentName" @value={{@model.departmentName}} />
+  </div>
+
+  <button type="submit">Update</button>
+</form>
+{{outlet}}

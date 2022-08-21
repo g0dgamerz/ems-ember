@@ -1,0 +1,9 @@
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+#nav {
+    left: 0;
+    top: 6%;
+    height: 100%;
+  }

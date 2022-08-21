@@ -1,0 +1,10 @@
+{{page-title "Designations"}}
+<ul>
+  <h1>Designation Lists</h1>
+  {{#each @model as |designation|}}
+  <LinkTo @route='designation' @model="{{designation.id}}">
+  <li>{{designation.designationName}}  {{designation.salary}}</li>
+  </LinkTo>
+  {{/each}}
+</ul>
+{{outlet}}

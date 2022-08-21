@@ -1,0 +1,10 @@
+{{page-title "CreateDepartment"}}
+<form onsubmit={{action "createDepartment"}}>
+  <div>
+    <label for="departmentName">Department Name</label>
+    <Input id="departmentName" @value={{this.departmentName}} />
+  </div>
+
+  <button type="submit">Create</button>
+</form>
+{{outlet}}

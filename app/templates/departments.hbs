@@ -1,0 +1,14 @@
+{{page-title "Departments"}}
+<ul>
+  <h1>Department Lists</h1>
+
+  <LinkTo @route="createDepartment">Create New Department</LinkTo>
+  {{#each @model as |department|}}
+  <LinkTo @route='department' @model="{{department.id}}">
+  <li>{{department.departmentName}}</li>
+  </LinkTo>
+  <button type="button" onclick={{action "deleteDepartment" department}}>Delete</button>
+  <LinkTo @route="editdepartment" @model={{department.id}}>Edit</LinkTo>
+  {{/each}}
+</ul>
+{{outlet}}

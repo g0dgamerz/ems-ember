@@ -1,10 +1,12 @@
 {{page-title "Editdepartment"}}
+<h1>Edit Department</h1>
 <form onsubmit={{action "editDepartment"}}>
+  <Input for="departmentid" class="form-control" type="hidden" @value={{@model.id}} />
   <div>
-    <label for="departmentName">Department Name</label>
-    <Input id="departmentName" @value={{@model.departmentName}} />
+    <label for="departmentName" class="form-label">Department Name</label>
+    <Input id="departmentName" class="form-control" @value={{@model.departmentName}} />
   </div>
 
-  <button type="submit">Update</button>
+  <button type="submit" class="btn btn-primary mt-2">Update</button>
 </form>
 {{outlet}}

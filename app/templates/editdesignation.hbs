@@ -1,2 +1,14 @@
 {{page-title "Editdesignation"}}
+<h1>Edit designation</h1>
+<form onsubmit={{action "editDesignation"}} style="width: 70%;" class="mx-auto">
+  <div class="mb-3">
+    <label for="designation" class="form-label">Designation</label>
+    <Input type="text" id="designation" @value={{@model.designationName}} class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Salary</label>
+    <Input type="number" id="salary" class="form-control" @value={{@model.salary}} />
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
 {{outlet}}

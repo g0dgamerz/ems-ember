@@ -1,0 +1,35 @@
+{{page-title "Createemployee"}}
+<h1>Crete New Employee </h1>
+<form onsubmit={{action "createemployee"}} style="width: 70%;" class="mx-auto">
+  <div class="mb-3">
+    <label for="name" class="form-label">Employee Name</label>
+    <Input type="text" id="designation" @value={{this.name}} class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <Input type="text" id="email" class="form-control" @value={{this.email}} />
+  </div>
+    <div class="mb-3">
+    <label for="number" class="form-label">Contact Number</label>
+    <Input type="text" id="number" class="form-control" @value={{this.contactNumber}} />
+  </div>
+
+  <div class="mb-3">
+    <label for="sex" class="form-label">Gender</label>
+    <Input type="text" id="sex" class="form-control" @value={{this.sex}} />
+  </div>
+    <div class="mb-3">
+    <label for="email" class="form-label">Hire Date</label>
+    <Input type="date" id="hireDate" class="form-control" @value={{this.hireDate}} />
+  </div>
+    <div class="mb-3">
+    <label for="email" class="form-label">Department</label>
+    <Input type="text" id="email" class="form-control" @value={{this.departmentId.departmentName}} />
+  </div>
+    <div class="mb-3">
+    <label for="email" class="form-label">Designation</label>
+    <Input type="text" id="email" class="form-control" @value={{this.designationID.designationName}} />
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{{outlet}}

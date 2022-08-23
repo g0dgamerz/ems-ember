@@ -8,10 +8,12 @@ export default class EditdepartmentController extends Controller {
   @action editDepartment(event) {
     event.preventDefault();
     console.log(this.model.departmentName);
-    let department = {
-      id: this.model.id,
-      departmentName: this.model.departmentName,
-    };
+    console.log(this.model);
+    let department = this.model;
+    // let department = {
+    //   ID: this.model.id,
+    //   departmentName: this.model.departmentName,
+    // };
     department.save().then(() => {
       this.router.transitionTo('departments');
     });

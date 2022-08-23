@@ -9,6 +9,7 @@ export default class CreateDepartmentController extends Controller {
     event.preventDefault();
     console.log(this.departmentName);
     let department = this.store.createRecord('department', {
+      departmentId: 0,
       departmentName: this.departmentName,
     });
     department.save().then(() => {

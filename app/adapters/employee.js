@@ -2,10 +2,10 @@
 import ApplicationAdapter from './application';
 import $ from 'jquery';
 
-export default class DesignationAdapter extends ApplicationAdapter {
+export default class EmployeeAdapter extends ApplicationAdapter {
   namespace = 'api';
   findAll(store, type) {
-    console.log('from designaioin adapter');
+    console.log('from employee apdater');
     let url = `https://localhost:7284/${this.namespace}/${type.modelName}`;
     return $.get(url);
   }
@@ -14,15 +14,13 @@ export default class DesignationAdapter extends ApplicationAdapter {
     return $.get(url);
   }
   createRecord(store, type, snapshot) {
-    console.log('designation is about to be create');
     let data = {};
     let serializer = store.serializerFor(type.modelName);
     serializer.serializeIntoHash(data, type, snapshot);
-    console.log(data.designation);
     return $.ajax({
       type: 'POST',
       url: `https://localhost:7284/${this.namespace}/${type.modelName}`,
-      data: JSON.stringify(data.designation),
+      data: JSON.stringify(data.employee),
       contentType: 'application/json',
     });
   }
@@ -39,7 +37,7 @@ export default class DesignationAdapter extends ApplicationAdapter {
     return $.ajax({
       type: 'PUT',
       url: `https://localhost:7284/${this.namespace}/${type.modelName}/${snapshot.id}`,
-      data: JSON.stringify(data.designation),
+      data: JSON.stringify(data.employee),
       contentType: 'application/json',
     });
   }

@@ -1,0 +1,23 @@
+{{page-title "Employee"}}
+<div class="container">
+      <h4 class="input-group-text">Employee Details of {{@model.name}}</h4>
+      <h4 style="display:inline">Employee Id:</h4> {{@model.id}}
+      <br>
+      <h4 style="display:inline">Employee Name:</h4> {{@model.name}}
+      <br>
+      <h4 style="display:inline">Email:</h4> {{@model.email}}
+      <br>
+      <h4 style="display:inline">Contact Number:</h4> {{@model.contactNumber}}
+      <br>
+      <h4 style="display:inline">Gender:</h4> {{@model.sex}}
+      <br>
+      <h4 style="display:inline">Hire Date:</h4> {{@model.hireDate}}
+      <br>
+      <h4 style="display:inline">Department:</h4> {{@model.departmentId.departmentName}}
+      <br>
+      <h4 style="display:inline">Designation:</h4> {{@model.designationID.designationName}}
+      <br>
+      <h4 style="display:inline">Salary:</h4> {{@model.designationID.salary}}
+
+</div>
+{{outlet}}

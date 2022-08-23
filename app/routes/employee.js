@@ -1,10 +1,9 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class EditdesignationRoute extends Route {
+export default class EmployeeRoute extends Route {
   @service store;
-
   model(params) {
-    return this.store.findRecord('designation', params.id);
+    return this.store.findRecord('employee', params.id);
   }
 }

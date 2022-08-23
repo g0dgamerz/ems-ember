@@ -1,14 +1,39 @@
 {{page-title "Departments"}}
-<ul>
-  <h1>Department Lists</h1>
 
-  <LinkTo @route="createDepartment">Create New Department</LinkTo>
+  <h1>Department Lists</h1>
+<LinkTo @route="createDepartment"><button class="btn btn-primary" type="button"><i class="fa-solid fa-plus"></i>New Department</button></LinkTo>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Department</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
   {{#each @model as |department|}}
-  <LinkTo @route='department' @model="{{department.id}}">
+  <tr>
+    <td>{{department.id}}</td>
+    <td>{{department.departmentName}}</td>
+    <td>
+      <LinkTo @route="department" @model={{department.id}}>
+      <button type="button" class="btn btn-primary">
+      <i class="fa-solid fa-eye"></i></button>
+      </LinkTo>
+    <button type="button" class="btn btn-danger" onclick={{action "deleteDepartment" department}}><i class="fa-solid fa-trash"></i></button>
+    <LinkTo @route="editdepartment" @model={{department.id}}>
+    <button type="button" class="btn btn-success">
+    <i class="fa-solid fa-pen-to-square"></i></button>
+    </LinkTo>
+    </td>
+  </tr>
+
+{{!-- <LinkTo @route='department' @model="{{department.id}}">
   <li>{{department.departmentName}}</li>
-  </LinkTo>
-  <button type="button" onclick={{action "deleteDepartment" department}}>Delete</button>
-  <LinkTo @route="editdepartment" @model={{department.id}}>Edit</LinkTo>
+  </LinkTo> --}}
+
   {{/each}}
-</ul>
+    </tbody>
+  </table>
+
 {{outlet}}

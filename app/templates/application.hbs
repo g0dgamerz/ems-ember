@@ -1,9 +1,9 @@
 {{page-title 'Ems'}}
 <nav class='navbar navbar-light bg-dark'>
   <div class='container-fluid'>
-    <a class='navbar-brand text-white' href='#'>
+    <LinkTo @route="index" class='navbar-brand text-white' href='#'>
       Employee Management System
-    </a>
+    </LinkTo>
   </div>
 </nav>
 <div>
@@ -25,34 +25,34 @@
         <hr />
         <ul class='nav nav-pills flex-column mb-auto'>
           <li class='nav-item'>
-            <a href='#' class='nav-link active' aria-current='page'>
+            <LinkTo @route="index" class='nav-link active' aria-current='page'>
               <i class='fa-solid fa-house-user'></i>
               Home
-            </a>
+            </LinkTo>
           </li>
           <li>
-            <a href='#' class='nav-link text-white'>
+            <LinkTo @route="dashboard" class='nav-link text-white'>
               <i class='fa-solid fa-gauge'></i>
               Dashboard
-            </a>
+            </LinkTo>
           </li>
           <li>
-            <a href='#' class='nav-link text-white'>
+            <LinkTo @route="employees" class='nav-link text-white'>
               <i class='fa-solid fa-people-group'></i>
               Employee
-            </a>
+            </LinkTo>
           </li>
           <li>
-            <a href='#' class='nav-link text-white'>
+            <LinkTo @route="departments" class='nav-link text-white'>
               <i class="fa-solid fa-people-roof"></i>
               Department
-            </a>
+            </LinkTo>
           </li>
           <li>
-            <a href='#' class='nav-link text-white'>
+            <LinkTo @route="designations" class='nav-link text-white'>
               <i class='fa-solid fa-envelopes-bulk'></i>
               Designation
-            </a>
+            </LinkTo>
           </li>
         </ul>
 

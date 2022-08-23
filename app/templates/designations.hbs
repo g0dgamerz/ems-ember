@@ -1,10 +1,38 @@
 {{page-title "Designations"}}
-<ul>
-  <h1>Designation Lists</h1>
+
+<h1>Designation Lists</h1>
+<LinkTo @route="createDesignation"><button class="btn btn-primary" type="button"><i class="fa-solid fa-plus"></i>New Designation</button></LinkTo>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Designation</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
   {{#each @model as |designation|}}
-  <LinkTo @route='designation' @model="{{designation.id}}">
-  <li>{{designation.designationName}}  {{designation.salary}}</li>
-  </LinkTo>
+  <tr>
+    <td>{{designation.designationId}}</td>
+    <td>{{designation.designationName}}</td>
+    <td>{{designation.salary}}</td>
+    <td>
+      <LinkTo @route="designation" @model={{designation.id}}>
+      <button type="button" class="btn btn-primary">
+      <i class="fa-solid fa-eye"></i></button>
+      </LinkTo>
+    <button type="button" class="btn btn-danger" onclick={{action "deleteDesignation" designation}}><i class="fa-solid fa-trash"></i></button>
+    <LinkTo @route="editdesignation" @model={{designation.id}}>
+    <button type="button" class="btn btn-success">
+    <i class="fa-solid fa-pen-to-square"></i></button>
+    </LinkTo>
+    </td>
+  </tr>
+
+
   {{/each}}
-</ul>
+    </tbody>
+  </table>
+
 {{outlet}}

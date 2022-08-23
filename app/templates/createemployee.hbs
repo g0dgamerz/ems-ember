@@ -13,23 +13,43 @@
     <label for="number" class="form-label">Contact Number</label>
     <Input type="text" id="number" class="form-control" @value={{this.contactNumber}} />
   </div>
-
+  <label for="sex" class="form-label">Gender</label>
+  <select class="form-control" name="sex">
+    <option value=0>Male</option>
+    <option value=1>Female</option>
+    <option value=2>Others</option>
+  </select>
+  {{!-- <select onchange={{action (mut selectedGender)}} value="target.value">
+  {{#each sex as |gender| }}
+  <option value={{gender}}>{{gender}}</option>
+  {{/each}}
+  </select> --}}
   <div class="mb-3">
     <label for="sex" class="form-label">Gender</label>
     <Input type="text" id="sex" class="form-control" @value={{this.sex}} />
   </div>
-    <div class="mb-3">
-    <label for="email" class="form-label">Hire Date</label>
+    <div class="mb-3 input-group date" id="datepicker">
+    <label for="email" class="form-label">Hire Date</label> &nbsp;
     <Input type="date" id="hireDate" class="form-control" @value={{this.hireDate}} />
+    <span class="input-group-append">
+      <span class="input-group-text bg-white" style="height:40px">
+      <i class="fa-solid fa-calendar-days"></i>
+      </span>
+    </span>
   </div>
     <div class="mb-3">
     <label for="email" class="form-label">Department</label>
-    <Input type="text" id="email" class="form-control" @value={{this.departmentId.departmentName}} />
+    <Input type="text" id="email" class="form-control" @value={{this.departmentId}} />
   </div>
     <div class="mb-3">
     <label for="email" class="form-label">Designation</label>
-    <Input type="text" id="email" class="form-control" @value={{this.designationID.designationName}} />
+    <Input type="text" id="email" class="form-control" @value={{this.designationId}} />
   </div>
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
+<script type="text/javascript">
+$(function(){
+  $('#datepicker').datepicker()
+});
+</script>
 {{outlet}}

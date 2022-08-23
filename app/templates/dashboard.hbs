@@ -1,2 +1,72 @@
-{{page-title "Dashboard"}}
+{{page-title 'Dashboard'}}
+{{#each @model as |Dashboard|}}
+<div class='row'>
+  <div class='col-md-2'>
+    <div class='card' style='width: 12rem;'>
+      <div class='card-body'>
+        <h5 class='card-title'>Employee</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of employee</h6>
+        <p class='card-text'>{{Dashboard.countEmp}}</p>
+      </div>
+    </div>
+    <br />
+    <div class='card' style='width: 12rem;'>
+      <div class='card-body'>
+        <h5 class='card-title'>Designation</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of Designation</h6>
+        <p class='card-text'>{{Dashboard.countDesignation}}</p>
+      </div>
+    </div>
+    <br />
+    <div class='card' style='width: 12rem;'>
+      <div class='card-body'>
+        <h5 class='card-title'>Department</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of Department</h6>
+        <p class='card-text'>{{Dashboard.countDepartment}}</p>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-2 ml-2' style="margin-left:15%">
+    <div class='card' style='width: 12rem; height: 18rem'>
+      <div class='card-body'>
+        <h5 class='card-title'>Male</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of Male</h6>
+        <p class='card-text'>{{Dashboard.countMale}}</p>
+      </div>
+      <center>
+      <img src="https://1q1km3747n32j9390btn5y5s-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/Male-Avatar-1024x1024.png" width="160" />
+      </center>
+    </div>
+  </div>
+  <div class='col-md-2 ml-2'>
+
+    <div class='card' style='width: 12rem; height: 18rem;margin-left:110%'>
+      <div class='card-body'>
+        <h5 class='card-title'>Female</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of Female</h6>
+        <p class='card-text'>{{Dashboard.countFemale}}</p>
+      </div>
+      <center>
+        <img src="https://cdn4.iconfinder.com/data/icons/avatars-21/512/avatar-circle-human-female-2-1024.png" width="170" />
+      </center>
+    </div>
+
+  </div>
+    <div class='col-md-2'>
+
+    <div class='card' style='width: 12rem; height: 18rem;margin-left:220%'>
+      <div class='card-body'>
+        <h5 class='card-title'>Others</h5>
+        <h6 class='card-subtitle mb-2 text-muted'>Total no of Others</h6>
+        <p class='card-text'>{{Dashboard.countOther}}</p>
+      </div>
+      <center>
+        <img src="https://cdn2.iconfinder.com/data/icons/lgbt-8/100/lesbian-gay-avatar-lgbt-avatar-gay-men-symbol-lesbian-pride-1024.png" width="190" style="margin-left: -1rem;margin-bottom: -1rem;" />
+      </center>
+    </div>
+
+  </div>
+
+</div>
+{{/each}}
 {{outlet}}

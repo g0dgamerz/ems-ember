@@ -5,5 +5,8 @@ export default class DepartmentRoute extends Route {
   @service store;
   model(params) {
     return this.store.findRecord('department', params.id);
+
+    // this.controller.set('test', []);
+    // this.controller.set('jigdesh', []);
   }
 }

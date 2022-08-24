@@ -19,7 +19,7 @@ export default class DepartmentAdapter extends ApplicationAdapter {
     return $.ajax({
       type: 'POST',
       url: `https://localhost:7284/${this.namespace}/${type.modelName}`,
-      data: JSON.stringify(data.department),
+      data: JSON.stringify(data[type.modelName]),
       contentType: 'application/json',
     });
   }

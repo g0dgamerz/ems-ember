@@ -7,6 +7,8 @@ export default class EmployeeModel extends Model {
   @attr('string') contactNumber;
   @attr('number') sex;
   @attr('date') hireDate;
-  @belongsTo('department') departmentId;
-  @belongsTo('designation') designationID;
+  @attr('number') departmentId;
+  @attr('number') designationId;
+  @belongsTo('department') department;
+  @belongsTo('designation') designation;
 }

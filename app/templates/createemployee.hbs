@@ -14,42 +14,66 @@
     <Input type="text" id="number" class="form-control" @value={{this.contactNumber}} />
   </div>
   <label for="sex" class="form-label">Gender</label>
-  <select class="form-control" name="sex">
+  <select class="form-control" name="sex" onchange={{action "setSelection" value="target.value"}}>
+     <option disabled selected> -- select Gender -- </option>
     <option value=0>Male</option>
     <option value=1>Female</option>
     <option value=2>Others</option>
   </select>
+  <br>
+
+  {{!-- <select required name="organizations" {{action "selectValue" on="change"}}>
+  <option disabled selected> -- Choose Organization -- </option>
+  {{#each this.organizations as |organization|}}
+     <option value={{organization.id}}>{{organization.name}}</option>
+  {{/each}}
+
+</select> --}}
+
   {{!-- <select onchange={{action (mut selectedGender)}} value="target.value">
   {{#each sex as |gender| }}
   <option value={{gender}}>{{gender}}</option>
   {{/each}}
   </select> --}}
-  <div class="mb-3">
+  {{!-- <div class="mb-3">
     <label for="sex" class="form-label">Gender</label>
     <Input type="text" id="sex" class="form-control" @value={{this.sex}} />
-  </div>
-    <div class="mb-3 input-group date" id="datepicker">
+  </div> --}}
+    <div class="mb-3" id="datepicker">
     <label for="email" class="form-label">Hire Date</label> &nbsp;
     <Input type="date" id="hireDate" class="form-control" @value={{this.hireDate}} />
+    {{!-- <Input type="date" id="hireDate" class="form-control" @value={{this.hireDate}} />
     <span class="input-group-append">
       <span class="input-group-text bg-white" style="height:40px">
       <i class="fa-solid fa-calendar-days"></i>
       </span>
-    </span>
-  </div>
+    </span> --}}
+    </div>
     <div class="mb-3">
     <label for="email" class="form-label">Department</label>
-    <Input type="text" id="email" class="form-control" @value={{this.departmentId}} />
-  </div>
+    <select required onchange={{action "setDepartment" value="target.value"}}>
+    <option disabled selected> -- Choose Department -- </option>
+    {{#each this.departments as |dep|}}
+     <option value={{dep.departmentId}}>{{dep.departmentName}}</option>
+    {{/each}}
+    </select>
+    </div>
     <div class="mb-3">
     <label for="email" class="form-label">Designation</label>
-    <Input type="text" id="email" class="form-control" @value={{this.designationId}} />
+    <select required onchange={{action "setDesignation" value="target.value"}}>
+    <option disabled selected> -- Choose Designation -- </option>
+    {{#each this.designations as |des|}}
+     <option value={{des.designationId}}>{{des.designationName}}</option>
+    {{/each}}
+    </select>
+    {{!-- <Input type="text" id="email" class="form-control" @value={{this.designationID}} /> --}}
   </div>
-  <button type="submit" class="btn btn-primary">Update</button>
+  {{!-- {{view Ember.Select content=department optionValuePath="content.id" optionLabelPath="content.departmentname"}} --}}
+  <button type="submit" class="btn btn-primary">Create</button>
 </form>
-<script type="text/javascript">
+{{!-- <script type="text/javascript">
 $(function(){
-  $('#datepicker').datepicker()
+  $('#datepicker').datepicker();
 });
-</script>
+</script> --}}
 {{outlet}}
